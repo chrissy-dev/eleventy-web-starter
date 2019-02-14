@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% if description %}{{ description }} {% else %} {{ site.description }} {% endif %}" />
+    <meta name="robots" content="index, follow">
+
+    <title>{% if title %} {{ title }} {% else %} {{ site.title }} {% endif %}</title>
+    <link rel="canonical" href="{{ site.url }}" />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="author" href="{{ site.url }}">
+
+    <!-- Open Graph meta -->
+    <meta property="og:url" content="{{ site.url}}{{ page.url }}" />
+    <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+    {% if site.social_meta.featured_image or featured_image %}
+    <meta property="og:image" content="{% if featured_image  %}{{ featured_image }}{% else %}{{ site.social_meta.featured_image }}{% endif %}" />
+    {% endif %}
+    <meta name="twitter:card" content="{% if description %}{{ description }}{% else %}{{ site.social_meta.description }}{% endif %}" />
+    {% if site.social_meta.twitter %}
+    <meta name="twitter:site" content="{{ site.social_meta.twitter }}" />
+    <meta name="twitter:creator" content="{{ site.social_meta.twitter }}" />
+    {% endif %}
+
+    <!-- capture the CSS content as a Liquid variable -->
+    {% capture css %}{% include stylesheets/app.css %}{% endcapture %}
+    <!-- feed it through our cssmin filter to minify -->
+    <style>
+      {{ css | cssmin | safe }}
+    </style>
+  </head>
+  <body>
+    {% include partials/header.html %}
+    {{ content }}
+  </body>
+</html>

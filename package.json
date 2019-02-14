@@ -1,0 +1,28 @@
+{
+  "name": "harryfairbairn",
+  "version": "1.0.0",
+  "description": "Static site for Harry Fairbairn, uses Gulp for assets and Eleventy for templating",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"eleventy --watch --quiet\" \"gulp dev --color\"",
+    "build": "gulp build && purgecss --config ./purgecss.config.js --out src/_includes/stylesheets && eleventy"
+  },
+  "author": "Chris Collins",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.7.1",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "clean-css": "^4.2.1",
+    "concurrently": "^4.1.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-connect": "^5.7.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "html-minifier": "^3.5.21",
+    "purgecss": "^1.1.0"
+  }
+}
