@@ -5,6 +5,8 @@ const sass = require("gulp-sass");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
 const del = require("del");
+const postcss = require("gulp-postcss");
+const tailwindcss = require("tailwindcss");
 
 // Default settings for gulpfile
 var project = {
@@ -56,6 +58,7 @@ gulp.task("stylesheets", done => {
   gulp
     .src(project.buildSrc + "/assets/stylesheets/app.scss")
     .pipe(sass().on("error", sass.logError))
+    .pipe(postcss([tailwindcss("./tailwind.js"), require("autoprefixer")]))
     .pipe(gulp.dest(project.buildSrc + "/_includes/stylesheets"));
   done();
 });

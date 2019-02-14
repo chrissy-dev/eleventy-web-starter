@@ -1,2 +1,3 @@
-// Importing TailwindCSS purely as an example
-@import "base/tailwind";
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
