@@ -8,6 +8,6 @@ An opinionated but minimal boilerplate for new projects built with Eleventy.
 - Templating is Liquid (can be changed if you want).
 - SCSS compiling with Gulp 
 - PurgeCSS to remove unused CSS (Set up for TailwindCSS by default)
-- Babel is transpile ES6 to ES5.
+- Babel is compile ES6 to ES5.
 - A good handful of SEO meta tags set up
 
