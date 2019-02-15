@@ -8,7 +8,7 @@
     <meta name="robots" content="index, follow">
 
     <title>{% if title %} {{ title }} {% else %} {{ site.title }} {% endif %}</title>
-    <link rel="canonical" href="{{ site.url }}" />
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
     <link rel="author" href="{{ site.url }}">
 
