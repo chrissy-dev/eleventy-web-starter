@@ -1,8 +1,7 @@
 {
-  "name": "harryfairbairn",
-  "version": "1.0.0",
-  "description": "Static site for Harry Fairbairn, uses Gulp for assets and Eleventy for templating",
-  "main": "index.js",
+  "name": "blazin",
+  "version": "0.1.0",
+  "description": "Simple 11ty boilerplate",
   "scripts": {
     "start": "concurrently \"eleventy --watch --quiet\" \"gulp dev --color\"",
     "build": "gulp build && purgecss --config ./purgecss.config.js --out src/_includes/stylesheets && eleventy"
