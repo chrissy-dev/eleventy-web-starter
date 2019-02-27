@@ -5,8 +5,6 @@ const sass = require("gulp-sass");
 const babel = require("gulp-babel");
 const uglify = require("gulp-uglify");
 const del = require("del");
-const postcss = require("gulp-postcss");
-const tailwindcss = require("tailwindcss");
 
 // Default settings for gulpfile
 var project = {
@@ -28,11 +26,9 @@ gulp.task("watch", done => {
     gulp.series("scripts")
   );
 
-  /**
-    Using gulp-watch as standard gulp
-    doesn't track files the same way.
-    See: https://stackoverflow.com/questions/42890414/how-to-setup-gulp-watch-with-gulp-connect-livereload
-  */
+  // Using gulp-watch as standard gulp
+  // doesn't track files the same way.
+  // See: https://stackoverflow.com/questions/42890414/how-to-setup-gulp-watch-with-gulp-connect-livereload
   watch(project.buildDest).pipe(connect.reload());
 
   done();
@@ -48,8 +44,7 @@ gulp.task("scripts", done => {
       })
     )
     .pipe(uglify())
-    .pipe(gulp.dest(project.buildDest + "/assets/scripts"))
-    .pipe(connect.reload());
+    .pipe(gulp.dest(project.buildSrc + "/_includes/scripts"));
   done();
 });
 
@@ -58,7 +53,6 @@ gulp.task("stylesheets", done => {
   gulp
     .src(project.buildSrc + "/assets/stylesheets/app.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(postcss([tailwindcss("./tailwind.js"), require("autoprefixer")]))
     .pipe(gulp.dest(project.buildSrc + "/_includes/stylesheets"));
   done();
 });
@@ -73,12 +67,13 @@ gulp.task("server", done => {
 });
 
 // Clean build dir
-gulp.task("clean", function() {
-  return del([project.buildDest + "/**/*"]);
+gulp.task("clean", done => {
+  del([project.buildDest + "/**/*"]);
+  done();
 });
 
 // Build task
-gulp.task("build", gulp.parallel("clean", "stylesheets", "scripts"));
+gulp.task("build", gulp.series("clean", "stylesheets", "scripts"));
 
 // Development task
 gulp.task("dev", gulp.parallel("watch", "stylesheets", "scripts", "server"));

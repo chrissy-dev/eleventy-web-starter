@@ -4,7 +4,7 @@
   "description": "Simple 11ty boilerplate",
   "scripts": {
     "start": "concurrently \"eleventy --watch --quiet\" \"gulp dev --color\"",
-    "build": "gulp build && purgecss --config ./purgecss.config.js --out src/_includes/stylesheets && eleventy"
+    "build": "gulp build && eleventy && purgecss --config ./purgecss.config.js --out src/_includes/stylesheets && eleventy"
   },
   "author": "Chris Collins",
   "license": "ISC",

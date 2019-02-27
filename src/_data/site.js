@@ -8,6 +8,7 @@
 
 module.exports = {
   title: "Blazin' 🔥",
+  author: "Chris Collins",
   url: "https://www.blazinboilerplate.com", // Don't end with a slash /
   description: "Site description",
   social_meta: {
