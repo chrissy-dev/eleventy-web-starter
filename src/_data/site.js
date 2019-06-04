@@ -6,14 +6,17 @@
   This file can be accessed using: {{ site.title }}
 */
 
+var pkgJSON = require('../../package.json');
+
 module.exports = {
-  title: "Blazin' 🔥",
+  title: "Web Starter 🔥",
   author: "Chris Collins",
-  url: "https://www.blazinboilerplate.com", // Don't end with a slash /
+  url: "https://www.chriscollins.me", // Don't end with a slash /
   description: "Site description",
   social_meta: {
-    twitter: "@chrisssycollins",
+    twitter: "@scottishstoater",
     featured_image: "/assets/images/featured_image.jpg"
   },
-  ENV: process.env.ELEVENTY_ENV
+  ENV: process.env.ELEVENTY_ENV,
+  version: pkgJSON.version
 };

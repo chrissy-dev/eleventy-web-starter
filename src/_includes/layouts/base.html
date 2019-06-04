@@ -25,12 +25,16 @@
     <meta name="twitter:creator" content="{{ site.social_meta.twitter }}" />
     {% endif %}
 
-    <!-- capture the CSS content as a Liquid variable -->
-    {% capture css %}{% include stylesheets/app.css %}{% endcapture %}
-    <!-- feed it through our cssmin filter to minify -->
-    <style>
-      {{ css | cssmin | safe }}
-    </style>
+    {% if site.ENV == 'production' %}
+      <!-- capture the CSS content as a Liquid variable -->
+      {% capture css %}{% include stylesheets/app.compiled.css %}{% endcapture %}
+      <!-- feed it through our cssmin filter to minify -->
+      <style> 
+        {{ css | cssmin | safe }}
+      </style>
+    {% else %}
+    <link rel="stylesheet" href="/assets/static/app.compiled.css">
+    {% endif %}
   </head>
   <body>
     {% include partials/header.html %}
