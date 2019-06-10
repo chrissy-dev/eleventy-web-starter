@@ -3,19 +3,23 @@
   "version": "1.0.0",
   "description": "Basic web starter kit with 11ty, TailwindsCSS and PostCSS.",
   "scripts": {
-    "post": "postcss src/assets/stylesheets/app.css -o src/assets/static/app.compiled.css -w",
-    "start": "concurrently \"ELEVENTY_ENV=development eleventy --serve --watch\" \"npm run post\"",
+    "start": "concurrently \"ELEVENTY_ENV=development eleventy --serve --watch\" \"postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css -w\" \"webpack --watch --config webpack.config.js\"",
     "build": "del dist && eleventy && purgecss --config ./purgecss.config.js --out src/_includes/stylesheets && ELEVENTY_ENV=production eleventy"
   },
   "author": "Chris Collins",
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.8.3",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
     "autoprefixer": "^9.4.7",
+    "babel-loader": "^8.0.6",
     "concurrently": "^4.1.0",
     "del-cli": "^2.0.0",
     "postcss-cli": "^6.1.2",
     "purgecss": "^1.1.0",
-    "tailwindcss": "^1.0.3"
+    "tailwindcss": "^1.0.3",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.2"
   }
 }

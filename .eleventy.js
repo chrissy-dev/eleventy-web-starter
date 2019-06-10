@@ -1,23 +1,5 @@
-module.exports = function(eleventyConfig) {
-  // Folders to copy to build dir (See. 1.1)
-  eleventyConfig.addPassthroughCopy("src/assets/images");
-  eleventyConfig.addPassthroughCopy("src/assets/static");
+var devConfig = require("./config/eleventy.dev.js")
+var prodConfig = require("./config/eleventy.prod.js")
 
-  // Clean CSS Filter
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return code; //new CleanCSS({}).minify(code).styles;
-  });
-
-  return {
-    dir: {
-      input: "src/",
-      output: "dist",
-      includes: "_includes"
-    },
-    templateFormats: ["html", "md"],
-    htmlTemplateEngine: "liquid",
-
-    // 1.1 Enable elventy to pass dirs specified above
-    passthroughFileCopy: true
-  };
-};
+// Load to correct .eleventy config file for the env
+module.exports = process.env.ELEVENTY_ENV === 'production' ? prodConfig : devConfig;

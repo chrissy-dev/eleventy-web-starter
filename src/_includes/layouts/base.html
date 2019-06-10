@@ -9,7 +9,7 @@
 
     <title>{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico" />
     <link rel="author" href="{{ site.author }}">
 
     <!-- Open Graph meta -->
@@ -33,12 +33,12 @@
         {{ css | cssmin | safe }}
       </style>
     {% else %}
-    <link rel="stylesheet" href="/assets/static/app.compiled.css">
+    <link rel="stylesheet" href="/static/app.compiled.css">
     {% endif %}
   </head>
   <body>
     {% include partials/header.html %}
     {{ content }}
   </body>
-  <script>{% include scripts/app.js %}</script>
+  <script src="/static/app.bundled.js"></script>
 </html>
