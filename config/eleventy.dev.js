@@ -2,11 +2,6 @@ module.exports = function(eleventyConfig) {
   // Folders to copy to build dir (See. 1.1)
   eleventyConfig.addPassthroughCopy("src/static");
 
-  // Clean CSS Filter
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return code; //new CleanCSS({}).minify(code).styles;
-  });
-
   return {
     dir: {
       input: "src/",
