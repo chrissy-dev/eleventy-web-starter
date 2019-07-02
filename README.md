@@ -15,3 +15,28 @@ An opinionated but minimal boilerplate for new projects built with Eleventy.
 - Webpack used to bundle scripts
 - Scripts optimised for production
 - A good handful of SEO meta tags set up
+
+
+## Usage
+
+### Install dependencies
+
+```
+npm install
+```
+
+### Start development server
+Starts watch tasks to compile when changes detected
+
+```
+npm start
+```
+
+### Create a production build 
+Minify HTML, compress JS, inline and minify CSS.
+
+``` 
+npm run build
+```
+
+
