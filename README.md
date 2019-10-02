@@ -1,6 +1,10 @@
-# Web Starter 
+<p align="center">
+	<img src="/src/static/sample.png" alt="Getting off the ground" width="200" align="center" />
+</p>
 
-An opinionated but minimal boilerplate for new projects built with Eleventy.
+<p align="center"><a href="https://webstarter.chriscollins.me"><strong>Web Starter</strong></a></p>
+
+<p align="center"><em>Eleventy · Tailwind CSS · HTML · CSS · Javascript</em></p>
 
 ## Features 
 
@@ -14,7 +18,7 @@ An opinionated but minimal boilerplate for new projects built with Eleventy.
 - CSS inlined and minified in production
 - Webpack used to bundle scripts
 - Scripts optimised for production
-- A good handful of SEO meta tags set up
+- `<head>` optimised, using [htmlhead.dev](https://www.htmlhead.dev)
 
 
 ## Usage
@@ -38,5 +42,11 @@ Minify HTML, compress JS, inline and minify CSS.
 ``` 
 npm run build
 ```
+
+---
+
+#### Credits
+
+- Illustration by [Icons8](https://icons8.com/ouch/illustration/fogg-message-sent)
 
 
