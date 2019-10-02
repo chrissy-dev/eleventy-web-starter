@@ -25,7 +25,7 @@ module.exports = function(eleventyConfig) {
       output: "dist",
       includes: "_includes"
     },
-    templateFormats: ["html", "md"],
+    templateFormats: ["html", "md", "liquid"],
     htmlTemplateEngine: "liquid",
 
     // 1.1 Enable elventy to pass dirs specified above
