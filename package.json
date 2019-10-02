@@ -1,6 +1,6 @@
 {
   "name": "web-starter",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Basic web starter kit with 11ty, TailwindsCSS and PostCSS.",
   "scripts": {
     "start": "concurrently \"ELEVENTY_ENV=development eleventy --serve --watch\" \"postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css -w\" \"webpack --watch --config webpack.config.js\"",
