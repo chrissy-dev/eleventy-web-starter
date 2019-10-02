@@ -9,10 +9,10 @@
 var pkgJSON = require('../../package.json');
 
 module.exports = {
-  title: "Web Starter 🚀",
+  title: "Web Starter | Start building your website quicker",
   author: "Chris Collins",
-  url: "https://www.chriscollins.me", // Don't end with a slash /
-  description: "Site description",
+  url: "https://webstarter.chriscollins.me", // Don't end with a slash /
+  description: "An opinionated but minimal boilerplate for new projects built with Eleventy",
   meta_data: {
     theme_color: '#000', // used in Chrome, Firefox OS and Opera
     twitter: "@scottishstoater",
