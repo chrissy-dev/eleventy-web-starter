@@ -5,7 +5,6 @@
     {% if site.ENV == 'production' %}
       <!-- capture the CSS content as a Liquid variable -->
       {% capture css %}{% include stylesheets/app.compiled.css %}{% endcapture %}
-      <!-- feed it through our cssmin filter to minify -->
       <style> 
         {{ css | safe }}
       </style>
