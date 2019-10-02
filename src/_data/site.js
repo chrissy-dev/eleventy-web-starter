@@ -13,9 +13,10 @@ module.exports = {
   author: "Chris Collins",
   url: "https://www.chriscollins.me", // Don't end with a slash /
   description: "Site description",
-  social_meta: {
+  meta_data: {
+    theme_color: '#000', // used in Chrome, Firefox OS and Opera
     twitter: "@scottishstoater",
-    featured_image: "/static/images/featured_image.jpg"
+    default_social_image: "/static/images/featured_image.jpg"
   },
   ENV: process.env.ELEVENTY_ENV,
   version: pkgJSON.version

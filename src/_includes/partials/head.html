@@ -1,0 +1,87 @@
+<!--
+  Maintained with the excellent knowledge from https://htmlhead.dev
+  These comments will be removed in production
+
+  ========================
+
+  The following 2 meta tags *must* come first in the <head>
+  to consistently ensure proper document rendering.
+  Any other head element should come *after* these tags.
+-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  Allows control over where resources are loaded from.
+  Place as early in the <head> as possible, as the tag  
+  only applies to resources that are declared after it.
+-->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+
+<!-- Theme Color for Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="{{ site.meta_data.theme_color }}">
+
+<!-- Set the base URL for all relative URLs within the document -->
+<base href="{{ page.url }}">
+
+
+<!-- 
+  Short description of the document (limit to 150 characters)
+  This content *may* be used as a part of search engine results. 
+-->
+<meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+
+<!-- Control the behavior of search engine crawling and indexing -->
+<meta name="robots" content="index,follow"><!-- All Search Engines -->
+<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
+<!-- Tells Google not to show the sitelinks search box -->
+<meta name="google" content="nositelinkssearchbox">
+<!-- Tells Google not to provide a translation for this document -->
+<meta name="google" content="notranslate">
+
+<!-- Identify the software used to build the document, Eleventy ftw! -->
+<meta name="generator" content="eleventy">
+
+<!-- Disable automatic detection and formatting of possible phone numbers -->
+<meta name="format-detection" content="telephone=no">
+
+<!-- Helps prevent duplicate content issues -->
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<title>{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</title>
+<link rel="icon" type="image/x-icon" href="/static/images/favicon.png" />
+
+<!-- Links to information about the author(s) of the document -->
+<link rel="author" href="humans.txt">
+
+<!-- Icon in the highest resolution we need it for -->
+<link rel="icon" sizes="192x192" href="/static/images/favicon.png">
+
+<!-- Apple Touch Icon (reuse 192px icon.png) -->
+<link rel="apple-touch-icon" href="/static/images/favicon.png">
+
+<!-- Facebook Open Graph meta -->
+<meta property="og:url" content="{{ site.url}}{{ page.url }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+{% if site.meta_data.default_social_image or featured_image %}
+<meta property="og:image" content="{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.default_social_image }}{% endif %}" />
+{% endif %}
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="{{ site.author }}">
+
+<!-- Twitter Open Graph meta -->
+<meta name="twitter:card" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:site" content="{{ site.meta_data.twitter }}">
+<meta name="twitter:creator" content="{{ site.meta_data.twitter }}">
+<meta name="twitter:url" content="{{ site.url}}{{ page.url }}">
+<meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
+<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
+{% if site.meta_data.default_social_image or featured_image %}
+<meta name="twitter:image" content="{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.default_social_image }}{% endif %}">
+{% endif %}
+<!-- disallow Twitter from using your site's info for personalization purposes -->
+<meta name="twitter:dnt" content="on">
