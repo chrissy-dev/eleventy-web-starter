@@ -30,7 +30,7 @@
       {% capture css %}{% include stylesheets/app.compiled.css %}{% endcapture %}
       <!-- feed it through our cssmin filter to minify -->
       <style> 
-        {{ css | cssmin | safe }}
+        {{ css | safe }}
       </style>
     {% else %}
     <link rel="stylesheet" href="/static/app.compiled.css">
