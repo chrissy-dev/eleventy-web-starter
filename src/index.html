@@ -2,10 +2,19 @@
 layout: layouts/base
 ---
 
-<main class="px-4 max-w-xl mx-auto text-lg text-gray-800">
-    <header class="text-center">
-        <img src="/static/sample.png" alt="Illustration of a hand glider getting off the ground" class="w-full">
-        <h1 class="font-bold text-3xl">Web Starter <span class="font-light text-gray-500">v{{ site.version}}</span></h1>
-        <p class="text-gray-700">Get your website off the ground and enjoy the journey.</p>
-    </header>
-</main> 
+<main class="px-4 max-w-xl mx-auto text-lg text-gray-800 text-center">
+    <img src="/static/sample.png" alt="Illustration of a hand glider getting off the ground" class="w-full">
+    <h1 class="font-bold text-3xl">Web Starter <span class="font-light text-gray-500">v{{ site.version}}</span></h1>
+    <p class="text-gray-700">Get your website off the ground and enjoy the journey.</p>
+
+    <ul class="md:flex my-4">
+        <li class="md:flex-auto p-2">
+            <a href="https://github.com/chrisssycollins/web-starter/zipball/master/" class="block py-3 px-5 shadow-lg font-bold bg-teal-400 text-white rounded-lg hover:bg-teal-500">Download</a>
+        </li>
+        <li class="md:flex-auto p-2">
+            <a href="https://github.com/chrisssycollins/web-starter#features" class="block py-3 px-5 shadow-lg font-bold border rounded-lg hover:bg-gray-100">Get started</a>
+        </li>
+    </ul>
+
+    <p class="text-xs text-gray-500">Open source project by <a class="underline" href="https://www.chriscollins.me">Chris Collins</a>. Go and build something great, don't thank me.</p>
+</main>
