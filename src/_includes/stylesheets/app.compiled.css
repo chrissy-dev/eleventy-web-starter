@@ -374,6 +374,11 @@ input::-webkit-input-placeholder {
   opacity: 0.5;
 }
 
+input::-moz-placeholder {
+  color: inherit;
+  opacity: 0.5;
+}
+
 input:-ms-input-placeholder {
   color: inherit;
   opacity: 0.5;
