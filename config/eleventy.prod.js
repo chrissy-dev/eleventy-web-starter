@@ -1,10 +1,22 @@
+const htmlmin = require("html-minifier");
+
 module.exports = function(eleventyConfig) {
   // Folders to copy to build dir (See. 1.1)
   eleventyConfig.addPassthroughCopy("src/static");
 
-  // Clean CSS Filter
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return code; //new CleanCSS({}).minify(code).styles;
+  // Minify HTML (including inlined CSS and JS) 
+  eleventyConfig.addTransform("compressHTML", function(content, outputPath) {
+    if( outputPath.endsWith(".html") ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true
+      });
+      return minified;
+    }
+    return content;
   });
 
   return {
