@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="/src/static/sample.png" alt="Getting off the ground" width="200" align="center" />
+	<img src="/src/static/sample.png" alt="Getting off the ground" width="500" align="center" />
 </p>
 
 <p align="center"><a href="https://webstarter.chriscollins.me"><strong>Web Starter</strong></a></p>
