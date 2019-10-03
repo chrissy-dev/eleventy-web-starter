@@ -101,6 +101,10 @@ strong {
  * Remove the border on images inside links in IE 10.
  */
 
+img {
+  border-style: none;
+}
+
 /* Forms
    ========================================================================== */
 
@@ -320,6 +324,13 @@ button:focus {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /**
  * Tailwind custom reset styles
  */
@@ -368,6 +379,10 @@ html {
  *
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
+
+img {
+  border-style: solid;
+}
 
 input::-webkit-input-placeholder {
   color: inherit;
@@ -444,7 +459,7 @@ input {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
-
+img,
 canvas,
 object {
   display: block;
@@ -458,12 +473,64 @@ object {
  * https://github.com/mozdevs/cssremedy/issues/14
  */
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-teal-400 {
+  background-color: #4fd1c5;
+}
+
+.hover\:bg-gray-100:hover {
+  background-color: #f7fafc;
+}
+
+.hover\:bg-teal-500:hover {
+  background-color: #38b2ac;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.block {
+  display: block;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
 .font-bold {
   font-weight: 700;
 }
 
-.mb-0 {
-  margin-bottom: 0;
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
 }
 
 .px-4 {
@@ -471,15 +538,71 @@ object {
   padding-right: 1rem;
 }
 
-.pt-4 {
-  padding-top: 1rem;
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .static {
   position: static;
 }
 
+.relative {
+  position: relative;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.text-gray-500 {
+  color: #a0aec0;
+}
+
+.text-gray-700 {
+  color: #4a5568;
+}
+
+.text-gray-800 {
+  color: #2d3748;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+}
+
 .text-lg {
   font-size: 1.125rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.w-full {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+
+  .md\:flex {
+    display: flex;
+  }
+
+  .md\:flex-auto {
+    flex: 1 1 auto;
+  }
 }
 
