@@ -9,7 +9,7 @@
 ## Features 
 
 - This project uses Eleventy as a static site generator
-- Default templating is Liquid (can be changed if you want)
+- Default templating is [Nunjucks](https://mozilla.github.io/nunjucks/) (can be changed if you want)
 - PostCSS set up to handle:
 	- TailwindCSS
 	- Autoprefixer 
