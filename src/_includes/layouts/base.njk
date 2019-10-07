@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include partials/head.html %}
+    {% include "partials/head.njk" %}
     {% if site.ENV == 'production' %}
       <!-- capture the CSS content as a Liquid variable -->
-      {% capture css %}{% include stylesheets/app.compiled.css %}{% endcapture %}
+      {% set css %}{% include "stylesheets/app.compiled.css" %}{% endset %}
       <style> 
         {{ css | safe }}
       </style>
@@ -13,7 +13,7 @@
     {% endif %}
   </head>
   <body>
-    {{ content }}
+    {{ content | safe }}
   </body>
   <script src="/static/app.bundled.js"></script>
 </html>
