@@ -18,7 +18,7 @@
 - CSS inlined and minified in production
 - Webpack used to bundle scripts
 - Scripts optimised for production
-- `<head>` optimised, using [htmlhead.dev](https://www.htmlhead.dev)
+- `<head>` optimised, using [htmlhead.dev](https://htmlhead.dev)
 
 
 ## Usage
