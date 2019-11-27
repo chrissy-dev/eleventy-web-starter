@@ -45,7 +45,7 @@ module.exports = function (eleventyConfig) {
         templateFormats: ["html", "md", "njk"],
         htmlTemplateEngine: "njk",
 
-        // 1.1 Enable elventy to pass dirs specified above
+        // 1.1 Enable eleventy to pass dirs specified above
         passthroughFileCopy: true
     };
 };
