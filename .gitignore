@@ -65,3 +65,7 @@ typings/
 
 # Build 
 dist
+
+# Temp JS & CSS files created for dev
+src/static/app.bundled.js
+src/static/app.compiled.css
