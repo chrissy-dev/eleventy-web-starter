@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include "partials/head.njk" %}
-    {% if site.ENV == 'production' %}
+    {% include "head.njk" %}
+    {% if env == 'production' %}
       <!-- capture the CSS content as a Liquid variable -->
       {% set css %}{% include "stylesheets/app.compiled.css" %}{% endset %}
       <style> 
