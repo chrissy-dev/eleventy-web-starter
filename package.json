@@ -1,10 +1,10 @@
 {
-  "name": "web-starter",
+  "name": "jamstack-web-starter",
   "version": "1.3.0",
-  "description": "Basic web starter kit with 11ty, TailwindsCSS and PostCSS.",
+  "description": "Minimal boilerplate for new projects built with Eleventy, Tailwind and PostCSS",
   "scripts": {
-    "start": "concurrently \"ELEVENTY_ENV=development eleventy --serve --watch\" \"postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css -w\" \"webpack --watch --config webpack.config.js\"",
-    "build": "del dist && eleventy && purgecss --config ./purgecss.config.js --out src/_includes/stylesheets && ELEVENTY_ENV=production webpack --config webpack.config.js && ELEVENTY_ENV=production eleventy"
+    "start": "concurrently \"postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css -w\" \"webpack --watch --config webpack.config.js\" \"ELEVENTY_ENV=development eleventy --serve --watch\"",
+    "build": "del dist && eleventy && purgecss --config ./purgecss.config.js --out src/_includes && ELEVENTY_ENV=production webpack --config webpack.config.js && ELEVENTY_ENV=production eleventy"
   },
   "author": "Chris Collins",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "concurrently": "^5.0.2",
     "del-cli": "^3.0.0",
     "html-minifier": "^4.0.0",
+    "js-yaml": "^3.13.1",
     "luxon": "^1.21.3",
     "postcss-cli": "^7.1.0",
     "purgecss": "^1.4.2",

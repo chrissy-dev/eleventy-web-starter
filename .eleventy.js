@@ -1,10 +1,11 @@
-const htmlmin = require("html-minifier");
 const { DateTime } = require("luxon");
+const htmlmin = require("html-minifier");
+const yaml = require("js-yaml");
 
 module.exports = function (eleventyConfig) {
     // Folders to copy to build dir (See. 1.1)
     eleventyConfig.addPassthroughCopy("src/static");
-
+    
     if (process.env.ELEVENTY_ENV === 'production') {
         // Minify HTML (including inlined CSS and JS) 
         eleventyConfig.addTransform("compressHTML", function (content, outputPath) {
@@ -27,20 +28,15 @@ module.exports = function (eleventyConfig) {
         return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
     });
 
-    eleventyConfig.addFilter("readableDate", dateObj => {
-        return DateTime.fromJSDate(new Date(dateObj), { zone: 'utc' }).toFormat("dd LLL yyyy");
-    });
-
-    eleventyConfig.addFilter("w3cDate", function (date) {
-        return date.toISOString();
-    });
-
+    // Add YAML support for data files
+    eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
 
     return {
         dir: {
             input: "src/",
             output: "dist",
-            includes: "_includes"
+            includes: "_includes",
+            layouts: "_layouts"
         },
         templateFormats: ["html", "md", "njk"],
         htmlTemplateEngine: "njk",
