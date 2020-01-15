@@ -11,5 +11,5 @@ url: "https://webstarter.chriscollins.me"
 author: "Chris Collins"
 meta_data: 
  twitter: "@scottishstoater"
- default_social_image: "/static/featured_image.jpg"
+ default_social_image: "/static/default_social_image.jpg"
 
