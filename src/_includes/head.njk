@@ -53,7 +53,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
 {% if site.meta_data.default_social_image or featured_image %}
-  <meta property="og:image" content="{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.default_social_image }}{% endif %}" />
+  <meta property="og:image" content="{% if env == 'production' %}{{ site.url }}{% endif %}{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.default_social_image }}{% endif %}" />
 {% endif %}
 <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
 <meta property="og:site_name" content="{{ site.title }}">
@@ -64,11 +64,6 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="{{ site.meta_data.twitter }}">
 <meta name="twitter:creator" content="{{ site.meta_data.twitter }}">
-<meta name="twitter:url" content="{{ site.url}}{{ page.url }}">
-<meta name="twitter:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
-<meta name="twitter:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
-{% if site.meta_data.default_social_image or featured_image %}
-  <meta name="twitter:image" content="{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.default_social_image }}{% endif %}">
-{% endif %}
+
 <!-- disallow Twitter from using your site's info for personalization purposes -->
 <meta name="twitter:dnt" content="on">
