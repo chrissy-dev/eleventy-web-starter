@@ -1,6 +1,6 @@
 {
   "name": "jamstack-web-starter",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Minimal boilerplate for new projects built with Eleventy, Tailwind and PostCSS",
   "scripts": {
     "start": "concurrently \"postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css -w\" \"webpack --watch --config webpack.config.js\" \"ELEVENTY_ENV=development eleventy --serve --watch\"",
