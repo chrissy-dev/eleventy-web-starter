@@ -65,3 +65,7 @@ typings/
 
 # Build 
 dist
+
+# Don't commit temp build files
+src/static/app.bundled.js
+src/static/app.compiled.css

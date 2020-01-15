@@ -3,8 +3,8 @@
   "version": "1.4.0",
   "description": "Minimal boilerplate for new projects built with Eleventy, Tailwind and PostCSS",
   "scripts": {
-    "start": "concurrently \"postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css -w\" \"webpack --watch --config webpack.config.js\" \"ELEVENTY_ENV=development eleventy --serve --watch\"",
-    "build": "del dist && eleventy && purgecss --config ./purgecss.config.js --out src/_includes && ELEVENTY_ENV=production webpack --config webpack.config.js && ELEVENTY_ENV=production eleventy"
+    "start": "concurrently \"postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css -w\" \"webpack --watch --config webpack.config.js\" \"eleventy --serve --watch\"",
+    "build": "del dist && eleventy && postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css && purgecss --config ./purgecss.config.js --out src/_includes/ && webpack -p --config webpack.config.js && ELEVENTY_ENV=production eleventy"
   },
   "author": "Chris Collins",
   "license": "ISC",
