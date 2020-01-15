@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="/src/static/icon.svg" alt="Rocket icon" width="128" align="center" />
+	<img src="/src/static/icon.svg" alt="Rocket icon" width="56" align="center" />
 </p>
 
 <p align="center"><a href="https://webstarter.chriscollins.me"><strong>JAMStack Web Starter</strong></a></p>
