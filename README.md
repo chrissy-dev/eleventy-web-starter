@@ -1,8 +1,8 @@
 <p align="center">
-	<img src="/src/static/sample.png" alt="Getting off the ground" width="400" align="center" />
+	<img src="/src/static/icon.svg" alt="Rocket icon" width="128" align="center" />
 </p>
 
-<p align="center"><a href="https://webstarter.chriscollins.me"><strong>Web Starter</strong></a></p>
+<p align="center"><a href="https://webstarter.chriscollins.me"><strong>JAMStack Web Starter</strong></a></p>
 
 <p align="center"><em>Eleventy · Tailwind CSS · HTML · CSS · Javascript</em></p>
 
@@ -82,4 +82,5 @@ If you don't have an existing place to host your site you should have a look at 
 - [Luxon](https://moment.github.io/luxon/)
 - [Concurrently](https://www.npmjs.com/package/concurrently)
 - [HTML Minifier](https://www.npmjs.com/package/html-minifier)
+- [JS YAML](https://www.npmjs.com/package/js-yaml)
 - Illustration by [Icons8](https://icons8.com/ouch/illustration/fogg-message-sent)
