@@ -4,7 +4,7 @@
     {% include "head.njk" %}
     {% if env == 'production' %}
       <!-- capture the CSS content as a Liquid variable -->
-      {% set css %}{% include "stylesheets/app.compiled.css" %}{% endset %}
+      {% set css %}{% include "app.compiled.css" %}{% endset %}
       <style> 
         {{ css | safe }}
       </style>
