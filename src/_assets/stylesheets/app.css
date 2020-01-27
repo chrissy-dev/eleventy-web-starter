@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-a,
-a:visited {
+a {
   @apply text-ws-blue-500 underline;
 }
 

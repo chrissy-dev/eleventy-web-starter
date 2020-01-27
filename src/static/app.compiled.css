@@ -12085,8 +12085,7 @@ video {
   z-index: auto;
 }
 
-a,
-a:visited {
+a {
   color: #006AFE;
   text-decoration: underline;
 }
