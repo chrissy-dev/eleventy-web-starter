@@ -5,7 +5,7 @@
 #  This file can be accessed using: {{ site.title }}
 
 title: "Web Starter" # Appears after the title Page eg. Title - Web Starter
-description: "Minimal boilerplate for new projects built with Eleventy, Tailwind and PostCSS" 
+description: "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS" 
 url: "https://webstarter.chriscollins.me"
 
 author: "Chris Collins"
