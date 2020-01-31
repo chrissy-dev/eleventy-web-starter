@@ -4,7 +4,7 @@
   "description": "Minimal boilerplate for new projects built with Eleventy, Tailwind and PostCSS",
   "scripts": {
     "start": "concurrently \"postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch --verbose\" \"webpack --watch --config webpack.config.js\" \"eleventy --serve --watch\"",
-    "build": "del dist && eleventy && postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css && purgecss --config ./purgecss.config.js --out src/_includes/ && webpack -p --config webpack.config.js && ELEVENTY_ENV=production eleventy"
+    "build": "del dist && eleventy && NODE_ENV=production postcss src/_assets/stylesheets/app.css -o src/_includes/app.compiled.css && webpack -p --config webpack.config.js && ELEVENTY_ENV=production eleventy"
   },
   "author": "Chris Collins",
   "license": "ISC",
@@ -12,6 +12,7 @@
     "@11ty/eleventy": "^0.10.0",
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
+    "@fullhuman/postcss-purgecss": "^2.0.5",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
     "concurrently": "^5.0.2",
@@ -20,7 +21,6 @@
     "js-yaml": "^3.13.1",
     "luxon": "^1.21.3",
     "postcss-cli": "^7.1.0",
-    "purgecss": "^1.4.2",
     "tailwindcss": "^1.1.4",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
