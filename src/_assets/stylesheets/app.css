@@ -1,48 +1,49 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 a {
-  @apply text-ws-blue-500 underline;
+	@apply text-ws-blue-500 underline;
 }
 
 .rocket {
-  animation: rocket 0.7s linear infinite both;
+	animation: rocket 0.7s linear infinite both;
 }
 
 @keyframes rocket {
-  0% {
-    transform: translate(0);
-    transform: rotate(0);
-  }
-  10% {
-    transform: translate(-1px, -1px);
-  }
-  20% {
-    transform: translate(1px, -1px);
-  }
-  30% {
-    transform: translate(-1px, 1px);
-  }
-  40% {
-    transform: translate(1px, 1px);
-  }
-  50% {
-    transform: translate(-1px, -1px);
-  }
-  60% {
-    transform: translate(1px, -1px);
-  }
-  70% {
-    transform: translate(-1px, 1px);
-  }
-  80% {
-    transform: translate(-2px, -2px);
-  }
-  90% {
-    transform: translate(2px, -2px);
-  }
-  100% {
-    transform: translate(0);
-  }
+	0% {
+		transform: translate(0);
+		transform: rotate(0);
+	}
+	10% {
+		transform: translate(-1px, -1px);
+	}
+	20% {
+		transform: translate(1px, -1px);
+	}
+	30% {
+		transform: translate(-1px, 1px);
+	}
+	40% {
+		transform: translate(1px, 1px);
+	}
+	50% {
+		transform: translate(-1px, -1px);
+	}
+	60% {
+		transform: translate(1px, -1px);
+	}
+	70% {
+		transform: translate(-1px, 1px);
+	}
+	80% {
+		transform: translate(-2px, -2px);
+	}
+	90% {
+		transform: translate(2px, -2px);
+	}
+	100% {
+		transform: translate(0);
+	}
 }
+
+@tailwind utilities;
