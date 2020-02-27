@@ -1,6 +1,6 @@
 {
   "name": "jamstack-web-starter",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
   "scripts": {
     "start": "concurrently \"postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch --verbose\" \"webpack --watch --config webpack.config.js\" \"eleventy --serve --watch\"",
