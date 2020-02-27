@@ -1,11 +1,13 @@
-const { DateTime } = require("luxon");
+const {
+    DateTime
+} = require("luxon");
 const htmlmin = require("html-minifier");
 const yaml = require("js-yaml");
 
 module.exports = function (eleventyConfig) {
     // Folders to copy to build dir (See. 1.1)
     eleventyConfig.addPassthroughCopy("src/static");
-    
+
     if (process.env.ELEVENTY_ENV === 'production') {
         // Minify HTML (including inlined CSS and JS) 
         eleventyConfig.addTransform("compressHTML", function (content, outputPath) {
@@ -22,14 +24,19 @@ module.exports = function (eleventyConfig) {
             return content;
         });
     }
-    
+
     // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
     eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-        return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
+        return DateTime.fromJSDate(dateObj, {
+            zone: 'utc'
+        }).toFormat('yyyy-LL-dd');
     });
 
     // Add YAML support for data files
     eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+
+    // This allows Eleventy to watch for file changes during local development.
+    eleventyConfig.setUseGitIgnore(false);
 
     return {
         dir: {
