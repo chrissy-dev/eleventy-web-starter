@@ -10,19 +10,19 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "@babel/core": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
-    "@fullhuman/postcss-purgecss": "^2.0.5",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@fullhuman/postcss-purgecss": "^2.1.0",
     "autoprefixer": "^9.7.4",
     "babel-loader": "^8.0.6",
-    "concurrently": "^5.0.2",
+    "concurrently": "^5.1.0",
     "del-cli": "^3.0.0",
     "html-minifier": "^4.0.0",
     "js-yaml": "^3.13.1",
-    "luxon": "^1.21.3",
+    "luxon": "^1.22.0",
     "postcss-cli": "^7.1.0",
-    "tailwindcss": "^1.1.4",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "tailwindcss": "^1.2.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   }
 }
