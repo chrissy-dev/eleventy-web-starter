@@ -1,39 +1,25 @@
-const {
-    DateTime
-} = require("luxon");
-const htmlmin = require("html-minifier");
-const yaml = require("js-yaml");
+const filters = require('./utils/filters.js')
+const transforms = require('./utils/transforms.js')
+const collections = require('./utils/collections.js')
 
 module.exports = function (eleventyConfig) {
     // Folders to copy to build dir (See. 1.1)
     eleventyConfig.addPassthroughCopy("src/static");
 
-    if (process.env.ELEVENTY_ENV === 'production') {
-        // Minify HTML (including inlined CSS and JS) 
-        eleventyConfig.addTransform("compressHTML", function (content, outputPath) {
-            if (outputPath.endsWith(".html")) {
-                let minified = htmlmin.minify(content, {
-                    useShortDoctype: true,
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    minifyCSS: true,
-                    minifyJS: true
-                });
-                return minified;
-            }
-            return content;
-        });
-    }
+    // Filters 
+    Object.keys(filters).forEach((filterName) => {
+        eleventyConfig.addFilter(filterName, filters[filterName])
+    })
 
-    // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-        return DateTime.fromJSDate(dateObj, {
-            zone: 'utc'
-        }).toFormat('yyyy-LL-dd');
-    });
+    // Transforms
+    Object.keys(transforms).forEach((transformName) => {
+        eleventyConfig.addTransform(transformName, transforms[transformName])
+    })
 
-    // Add YAML support for data files
-    eleventyConfig.addDataExtension("yaml", contents => yaml.safeLoad(contents));
+    // Collections
+    Object.keys(collections).forEach((collectionName) => {
+        eleventyConfig.addCollection(collectionName, collections[collectionName])
+    })
 
     // This allows Eleventy to watch for file changes during local development.
     eleventyConfig.setUseGitIgnore(false);
