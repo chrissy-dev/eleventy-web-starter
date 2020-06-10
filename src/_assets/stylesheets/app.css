@@ -1,5 +1,13 @@
-@tailwind base;
-@tailwind components;
+
+@import 'utils/_tailwind.css';
+@import 'utils/_accessibility.css';
+
+/* purgecss start ignore */
+
+:focus, button:focus {
+    outline: solid  3px rgba(0,0,0,0.05);
+    outline-offset: 4px;
+}
 
 a {
 	@apply text-ws-blue-500 underline;
@@ -46,4 +54,4 @@ a {
 	}
 }
 
-@tailwind utilities;
+/* purgecss end ignore */
