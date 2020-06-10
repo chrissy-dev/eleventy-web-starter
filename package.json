@@ -1,16 +1,16 @@
 {
 	"name": "jamstack-web-starter",
-	"version": "1.5.2",
+	"version": "1.6.0",
 	"description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
 	"scripts": {
-    "clean": "del dist",
+		"clean": "del dist",
 		"dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch --verbose",
 		"dev:scripts": "webpack --watch --config webpack.config.js",
 		"dev:11ty": "eleventy --serve --watch",
-    "build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/app.css -o src/_includes/app.compiled.css",
+		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/app.css -o src/_includes/app.compiled.css",
 		"build:11ty": "ELEVENTY_ENV=production eleventy",
 		"build:scripts": "webpack -p --config webpack.config.js",
-		"start": "run-p dev:* --print-label" ,
+		"start": "run-p dev:* --print-label",
 		"build": "run-s clean build:* --print-label"
 	},
 	"author": "Chris Collins",
