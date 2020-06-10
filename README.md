@@ -26,6 +26,7 @@
 - Default templating is [Nunjucks](https://mozilla.github.io/nunjucks/) (can be changed if you want)
 - PostCSS set up to handle:
 	- TailwindCSS
+	- CSS Imports
 	- Autoprefixer 
 - PurgeCSS to remove unused CSS (set up for TailwindCSS by default) in production
 - HTML minified in production
@@ -76,10 +77,9 @@ If you don't have an existing place to host your site you should have a look at 
 - [TailwindCSS](https://tailwindcss.com/)
 - [PostCSS](https://github.com/postcss)
 	- Autoprefixer
+	- PostCSS Import
 - [Babel](https://babeljs.io/)
 - [Webpack](https://webpack.js.org/)
-- [PurgeCSS](https://github.com/FullHuman/purgecss)
 - [Luxon](https://moment.github.io/luxon/)
-- [Concurrently](https://www.npmjs.com/package/concurrently)
+- [NPM Run All](https://www.npmjs.com/package/npm-run-all)
 - [HTML Minifier](https://www.npmjs.com/package/html-minifier)
-- [JS YAML](https://www.npmjs.com/package/js-yaml)
