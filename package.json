@@ -1,6 +1,6 @@
 {
 	"name": "jamstack-web-starter",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
 	"scripts": {
 		"clean": "del dist",
