@@ -7,7 +7,7 @@
 		"dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch --verbose",
 		"dev:scripts": "webpack --watch --config webpack.config.js",
 		"dev:11ty": "eleventy --serve --watch",
-		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/app.css -o src/_includes/app.compiled.css",
+		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css",
 		"build:11ty": "ELEVENTY_ENV=production eleventy",
 		"build:scripts": "NODE_ENV=production webpack -p --config webpack.config.js",
 		"start": "run-p dev:* --print-label",
