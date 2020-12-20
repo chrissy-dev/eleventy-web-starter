@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
       colors: {
@@ -20,6 +21,6 @@ module.exports = {
   plugins: [],
   purge: process.env.NODE_ENV === 'production' ? {
     enabled: true,
-    content: ['src/**/*.njk', 'src/**/*.js'],
+    content: ['./src/**/*.njk', './src/**/*.js', 'src/index.njk'],
   } : {}
 }
