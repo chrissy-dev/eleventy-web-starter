@@ -53,7 +53,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
 {% if site.meta_data.default_social_image or featured_image %}
-  <meta property="og:image" content="{% if env == 'production' %}{{ site.url }}{% endif %}{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.default_social_image }}{% endif %}" />
+  <meta property="og:image" content="{% if site.env == 'production' %}{{ site.url }}{% endif %}{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.default_social_image }}{% endif %}" />
 {% endif %}
 <meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
 <meta property="og:site_name" content="{{ site.title }}">
