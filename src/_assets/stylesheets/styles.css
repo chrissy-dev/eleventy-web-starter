@@ -1,0 +1,7 @@
+
+@import 'utils/_tailwind.css';
+@import 'utils/_accessibility.css';
+
+a {
+	@apply text-ws-blue-500 underline;
+}

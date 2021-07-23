@@ -1,11 +1,11 @@
 module.exports = {
-  "title": "Web Starter",
+  "title": "Eleventy Web Starter",
   "description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
-  "url": "https://webstarter.chriscollins.me",
+  "url": "https://eleventywebstarter.netlify.app",
   "author": "Chris Collins",
   "meta_data": {
     "twitter": "@scottishstoater",
-    "default_social_image": "/static/default_social_image.jpg"
+    "opengraph_default": "/static/opengraph-default.jpg"
   },
   "env": process.env.ELEVENTY_ENV === 'production'
 }
