@@ -11,6 +11,13 @@
     {% else %}
     <link rel="stylesheet" href="/static/styles.min.css">
     {% endif %}
+
+		<!-- Try and serve Google Fonts in the most efficent way possible -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+		<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" type="text/css"/>
+		</noscript>
   </head>
   <body>
     <a href="#main" class="skip-link">Skip to main content</a>
