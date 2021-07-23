@@ -4,31 +4,27 @@
 	"description": "Minimal boilerplate for new projects built with Eleventy, Tailwind, PurgeCSS and PostCSS",
 	"scripts": {
 		"clean": "del dist",
-		"dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch --verbose",
-		"dev:scripts": "webpack --watch --config webpack.config.js",
+		"dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/styles.min.css --watch --verbose",
+		"dev:scripts": "esbuild src/_assets/scripts/app.js --bundle --watch --outfile=src/static/app.min.js",
 		"dev:11ty": "eleventy --serve --watch",
-		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/app.css -o src/_includes/app.compiled.css",
+		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/styles.css -o src/_includes/styles.min.css",
 		"build:11ty": "ELEVENTY_ENV=production eleventy",
-		"build:scripts": "NODE_ENV=production webpack -p --config webpack.config.js",
-		"start": "run-p dev:* --print-label",
-		"build": "run-s clean build:* --print-label"
+		"build:scripts": "esbuild src/_assets/scripts/app.js --bundle --minify --outfile=dist/static/app.min.js",
+		"start": "run-p dev:*",
+		"build": "run-s clean build:*"
 	},
 	"author": "Chris Collins",
 	"license": "ISC",
 	"devDependencies": {
-		"@11ty/eleventy": "^0.11.0",
-		"@babel/core": "^7.11.6",
-		"@babel/preset-env": "^7.11.5",
-		"autoprefixer": "^9.8.6",
-		"babel-loader": "^8.1.0",
+		"@11ty/eleventy": "^0.12.1",
+		"autoprefixer": "^10.3.1",
 		"del-cli": "^3.0.1",
+		"esbuild": "^0.12.15",
 		"html-minifier": "^4.0.0",
-		"luxon": "^1.25.0",
+		"luxon": "^2.0.1",
 		"npm-run-all": "^4.1.5",
-		"postcss-cli": "^7.1.2",
-		"postcss-import": "^12.0.1",
-		"tailwindcss": "^1.8.5",
-		"webpack": "^4.44.1",
-		"webpack-cli": "^3.3.12"
+		"postcss-cli": "^8.3.1",
+		"postcss-import": "^14.0.2",
+		"tailwindcss": "^2.2.6"
 	}
 }
