@@ -4,7 +4,7 @@ module.exports = {
 	"url": "https://eleventywebstarter.netlify.app",
 	"author": "Chris Collins",
 	"meta_data": {
-		"twitter": "@scottishstoater",
+		"twitter": "@chrissy_dev",
 		"opengraph_default": "/static/opengraph-default.jpg"
 	},
 	"env": process.env.ELEVENTY_ENV === 'production'
