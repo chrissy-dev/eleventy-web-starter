@@ -21,8 +21,10 @@
 <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}">
 
 <!-- Control the behavior of search engine crawling and indexing -->
-<meta name="robots" content="index,follow"><!-- All Search Engines -->
-<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+<meta name="robots" content="index,follow">
+<!-- All Search Engines -->
+<meta name="googlebot" content="index,follow">
+<!-- Google Specific -->
 
 <!-- Tells Google not to show the sitelinks search box -->
 <meta name="google" content="nositelinkssearchbox">
@@ -38,7 +40,9 @@
 <!-- Helps prevent duplicate content issues -->
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-<title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
+<title>
+    {% if title %}{{ title }} - {% endif %}{{ site.title }}
+</title>
 
 <!-- Links to information about the author(s) of the document -->
 <link rel="author" href="humans.txt">
@@ -53,9 +57,9 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}">
 {% if site.meta_data.default_social_image or featured_image %}
-  <meta property="og:image" content="{% if site.env == 'production' %}{{ site.url }}{% endif %}{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.opengraph_default }}{% endif %}" />
+    <meta property="og:image" content="{% if site.env == 'production' %}{{ site.url }}{% endif %}{% if featured_image  %}{{ featured_image }}{% else %}{{ site.meta_data.opengraph_default }}{% endif %}"/>
 {% endif %}
-<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
+<meta property="og:description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}"/>
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="{{ site.author }}">

@@ -18,13 +18,13 @@
 	"devDependencies": {
 		"@11ty/eleventy": "^1.0.0",
 		"autoprefixer": "^10.4.2",
-		"del-cli": "^3.0.1",
-		"esbuild": "^0.12.15",
+		"del-cli": "^4.0.1",
+		"esbuild": "^0.14.11",
 		"html-minifier": "^4.0.0",
-		"luxon": "^2.0.1",
+		"luxon": "^2.3.0",
 		"npm-run-all": "^4.1.5",
 		"postcss": "^8.4.5",
-		"postcss-cli": "^8.3.1",
+		"postcss-cli": "^9.1.0",
 		"postcss-import": "^14.0.2",
 		"tailwindcss": "^3.0.13"
 	}
