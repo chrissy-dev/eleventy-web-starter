@@ -3,7 +3,7 @@
     <head>
         {% include "head.njk" %}
         {% if site.env %}
-            <!-- capture the CSS content as a Liquid variable -->
+            <!-- Capture the CSS content as a Nunjucks variable -->
             {% set css %}{% include "styles.min.css" %}{% endset %}
             <style>
                 {{css | safe}}
