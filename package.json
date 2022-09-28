@@ -10,7 +10,7 @@
 		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/styles.css -o src/_includes/styles.min.css",
 		"build:11ty": "ELEVENTY_ENV=production eleventy",
 		"build:scripts": "esbuild src/_assets/scripts/app.js --bundle --minify --outfile=dist/static/app.min.js",
-		"start": "run-p dev:*",
+		"dev": "run-p dev:*",
 		"build": "run-s clean build:*"
 	},
 	"author": "Chris Collins",
@@ -18,6 +18,7 @@
 	"devDependencies": {
 		"@11ty/eleventy": "^1.0.2",
 		"autoprefixer": "^10.4.12",
+		"cssnano": "^5.1.13",
 		"del-cli": "^5.0.0",
 		"esbuild": "^0.15.9",
 		"html-minifier": "^4.0.0",
