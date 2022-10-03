@@ -4,23 +4,38 @@ title: Eleventy Web Starter - Eleventy, esbuild, Tailwind and PostCSS
 description: Eleventy Web Starter is a lightweight Eleventy boilerplate utilising esbuild, Tailwind CSS and Post CSS
 ---
 
-<main id="main" class="p-6 md:p-12 lg:p-16 border-t-8 border-gray-200">
-    <div class="max-w-xl">
-        <h1 class="font-bold text-xl mb-2">Eleventy Web Starter <span class="font-light text-gray-500">v{{ pkg.version }}</span></h1>
-        <p>Eleventy Web Starter is a lightweight Eleventy boilerplate utilising esbuild, Tailwind CSS and Post CSS.</p>
-
-        <ul class="md:flex my-4 -mx-2 leading-tight ">
-            <li class="md:flex-auto p-2">
-                <a href="https://github.com/chrissy-dev/eleventy-web-starter/zipball/master/" class="block shadow text-center no-underline p-3 font-semibold bg-ws-blue-500 text-white rounded hover:bg-ws-blue-600">Download (.zip)</a>
-            </li>
-            <li class="md:flex-auto p-2">
-                <a href="https://github.com/chrissy-dev/eleventy-web-starter#features" class="block text-center no-underline text-black p-3 font-semibold rounded border hover:bg-gray-100">Get started</a>
-            </li>
+<main id="main" class="mx-auto max-w-3xl my-8 px-4">
+    <div class="divide-y divide-gray-200">
+        <div class="pt-6 pb-8 space-y-2 md:space-y-5">
+            <h1 class="text-3xl leading-9 font-extrabold text-gray-900 tracking-tight sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">Latest</h1>
+            <p class="text-lg leading-snug text-gray-500 max-w-lg">{{ site.description }}</p>
+        </div>
+        <ul class="divide-y divide-gray-200">
+            {%- for post in collections.posts -%}
+                <li class="py-12">
+                    <article class="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
+                        <dl>
+                            <dt class="sr-only">Published on</dt>
+                            <dd class="text-base leading-6 font-medium text-gray-500">
+                                <time datetime="{{ post.date | htmlDateString }}">{{ post.date | postDate }}</time>
+                            </dd>
+                        </dl>
+                        <div class="space-y-3 xl:col-span-3">
+                            <div class="space-y-3">
+                                <h2 class="text-2xl leading-tight font-bold tracking-tight">
+                                    <a class="text-gray-900" href="{{ post.url | url }}">{{ post.data.title }}</a>
+                                </h2>
+                                <div class="prose max-w-none text-gray-500">
+                                    <p>{{ post.data.excerpt }}</p>
+                                </div>
+                            </div>
+                            <div class="text-base leading-6 font-medium">
+                                <a class="text-pink-500 hover:text-pink-600" aria-label="Read &quot;Introducing linting for Tailwind CSS IntelliSense&quot;" href="{{ post.url | url }}">Read more →</a>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+            {%- endfor -%}
         </ul>
-
-        <footer class="text-xs text-gray-500 mt-12 border-t border-gray-100 pt-6">
-            <p>Proudly crafted in Scotland by <a href="https://www.chrissy.dev">Chris Collins</a>
-            </p>
-        </footer>
     </div>
 </main>

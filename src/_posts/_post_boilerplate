@@ -1,0 +1,18 @@
+---
+title: Example title
+excerpt: Example excerpt
+image: image.jpg # Relative to media_path
+tags: 
+ - tag1
+ - tag2
+
+date: 2022-09-28
+media_path: /media/year/folder_name
+
+# Overide some of the above for page titles, open graph etc
+meta_title: 
+meta_excerpt:
+meta_image: social.jpg # Relative to media_path
+---
+
+<!-- Markdown or HTML -->

@@ -1,0 +1,102 @@
+.post-content {
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply text-base lg:text-xl mt-4 lg:mt-8 mb-3 lg:mb-6 tracking-tight font-bold;
+	}
+
+    a, a:visited {
+        @apply underline underline-offset-4;
+    }
+
+	p,
+	ul,
+	ol,
+	hr,
+	pre,
+	figure {
+		@apply mx-auto text-base lg:text-lg;
+	}
+
+	.h1,
+	h1 {
+		@apply text-3xl;
+	}
+
+	.h2,
+	h2 {
+		@apply text-3xl;
+	}
+
+	.h3,
+	h3 {
+		@apply text-2xl;
+	}
+
+	.h4,
+	h4 {
+		@apply text-xl;
+	}
+
+	.h5,
+	h5 {
+		@apply text-lg;
+	}
+
+	.h6,
+	h6 {
+		@apply text-base;
+	}
+
+	p + p {
+		@apply mt-3 lg:mt-6;
+	}
+
+	figure {
+		@apply my-3 lg:my-6;
+	}
+
+	figure img {
+		width: 100%;
+	}
+
+	ul {
+		@apply list-disc;
+	}
+
+	ol {
+		@apply list-decimal;
+	}
+
+	ol,
+	ul {
+		@apply my-3 lg:mt-4 mb-8 ml-6 lg:ml-6;
+	}
+
+	ol ol,
+	ol ul,
+	ul ol,
+	ul ul {
+		@apply my-3 lg:mt-4 mb-8 ml-6 lg:ml-6;
+	}
+	li {
+		@apply my-2;
+	}
+
+	pre {
+		@apply bg-zinc-900 p-6 text-sm rounded-lg overflow-scroll text-slate-50 my-3 lg:my-6;
+	}
+
+	:not(pre) > code {
+		@apply border px-2 mx-1 rounded-lg text-base bg-white;
+	}
+}
