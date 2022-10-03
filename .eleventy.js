@@ -3,8 +3,9 @@ const isProduction = process.env.ELEVENTY_ENV === 'production';
 const { DateTime } = require('luxon');
 
 module.exports = function (eleventyConfig) {
-	// Folders to copy to build dir (See. 1.1)
+	// Folders to copy to build dir, untouched
 	eleventyConfig.addPassthroughCopy("src/static");
+	eleventyConfig.addPassthroughCopy("src/media");
 
 	/* ---------------------------------------------
         Filters
@@ -73,6 +74,7 @@ module.exports = function (eleventyConfig) {
 		},
 		templateFormats: ["html", "md", "njk"],
 		htmlTemplateEngine: "njk",
+        markdownTemplateEngine: "njk",
 
 		// 1.1 Enable eleventy to pass dirs specified above
 		passthroughFileCopy: true
