@@ -26,6 +26,13 @@ module.exports = function (eleventyConfig) {
 		return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
 	});
 
+    // urlDate: Return the date to be used in post urls e.g. 2020/09/28
+    eleventyConfig.addFilter("urlDate", (dateObj) => {
+        return DateTime.fromJSDate(dateObj, {
+        	zone: 'utc'
+        }).toFormat('yyyy/LL/dd');
+    });
+
 	/* ---------------------------------------------
         Collections
         
