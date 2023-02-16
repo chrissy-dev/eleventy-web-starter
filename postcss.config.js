@@ -6,6 +6,7 @@ module.exports = {
     "tailwindcss/nesting": {},
     tailwindcss: {},
     autoprefixer: {},
+    // Minify CSS output in production
     ...(isProduction && { cssnano: {} }),
   },
 };

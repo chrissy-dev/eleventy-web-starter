@@ -39,13 +39,13 @@ module.exports = function (eleventyConfig) {
     
     A collection allows you to group content
     to loop through within 11ty.
-	-------------------------------------------- */
+    -------------------------------------------- */
 
   /* ---------------------------------------------
     Transforms
 
     These can modify a template's output.
-	-------------------------------------------- */
+    -------------------------------------------- */
 
   // Minify HTML in Production
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
