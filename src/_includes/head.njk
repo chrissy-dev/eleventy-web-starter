@@ -3,7 +3,8 @@
 <base href="{{ page.url }}">
 
 <!-- Basic Page Meta -->
-<title>{% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
+<title>
+    {% if title %}{{ title }} - {% endif %}{{ site.title }}</title>
 <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <meta name="description" content="{% if excerpt %}{{ excerpt }}{% else %}{{ site.description }}{% endif %}">
 
