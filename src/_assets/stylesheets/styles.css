@@ -1,2 +1,3 @@
-@import 'utils/_tailwind.css';
-@import 'modules/_post-content.css';
+@import "tailwind/base";
+@import "modules/post-content";
+@import "tailwind/utils";

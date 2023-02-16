@@ -11,8 +11,8 @@ module.exports = function (eleventyConfig) {
         Filters
 
         A filter is a function which can be used 
-        within templating syntax to transform data 
-        into a more presentable format.
+        within the templating syntax to transform 
+        data into a more presentable format.
 	 -------------------------------------------- */
 
 	// htmlDateString: Return the date in the format e.g. 2022-12-25
@@ -62,7 +62,7 @@ module.exports = function (eleventyConfig) {
 		return content;
 	});
 
-	// This allows Eleventy to watch for file changes during local development.
+	// This allows Eleventy to watch for file changes usually ignored by git during local development.
 	eleventyConfig.setUseGitIgnore(false);
 
 	return {
@@ -76,7 +76,7 @@ module.exports = function (eleventyConfig) {
 		htmlTemplateEngine: "njk",
         markdownTemplateEngine: "njk",
 
-		// 1.1 Enable eleventy to pass dirs specified above
+		// Enable eleventy to pass dirs specified above
 		passthroughFileCopy: true
 	};
 };
