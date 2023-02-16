@@ -8,12 +8,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/media");
 
   /* ---------------------------------------------
-        Filters
+    Filters
 
-        A filter is a function which can be used 
-        within the templating syntax to transform 
-        data into a more presentable format.
-	 -------------------------------------------- */
+    A filter is a function which can be used 
+    within the templating syntax to transform 
+    data into a more presentable format.
+    -------------------------------------------- */
 
   // htmlDateString: Return the date in the format e.g. 2022-12-25
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
@@ -35,17 +35,17 @@ module.exports = function (eleventyConfig) {
   });
 
   /* ---------------------------------------------
-        Collections
-        
-        A collection allows you to group content
-        to loop through within 11ty.
-	 -------------------------------------------- */
+    Collections
+    
+    A collection allows you to group content
+    to loop through within 11ty.
+	-------------------------------------------- */
 
   /* ---------------------------------------------
-        Transforms
+    Transforms
 
-        These can modify a template's output.
-	 -------------------------------------------- */
+    These can modify a template's output.
+	-------------------------------------------- */
 
   // Minify HTML in Production
   eleventyConfig.addTransform("htmlmin", function (content, outputPath) {
