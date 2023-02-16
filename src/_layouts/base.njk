@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         {% include "head.njk" %}
-        {% if site.env %}
+        {% if site.isProduction %}
             <!-- Capture the CSS content as a Nunjucks variable -->
             {% set css %}{% include "styles.min.css" %}{% endset %}
             <style>

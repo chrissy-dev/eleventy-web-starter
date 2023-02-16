@@ -17,5 +17,5 @@ module.exports = {
 		},
 	},
 	plugins: [],
-	content: ["src/**/*.njk", "src/**/*.md", "src/**/*.js"],
+	content: ["./src/**/*.{html,md,njk,js}"],
 };
