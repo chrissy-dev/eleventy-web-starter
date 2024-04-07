@@ -1,40 +1,41 @@
-const filters = require('./utils/filters.js')
-const transforms = require('./utils/transforms.js')
-const collections = require('./utils/collections.js')
+const { DateTime } = require("luxon");
+const isProduction = process.env.ELEVENTY_ENV === "production";
 
 module.exports = function (eleventyConfig) {
-	// Folders to copy to build dir (See. 1.1)
+	// Folders to copy to build dir
 	eleventyConfig.addPassthroughCopy("src/static");
 
-	// Filters 
-	Object.keys(filters).forEach((filterName) => {
-		eleventyConfig.addFilter(filterName, filters[filterName])
-	})
+    // Filter to parse dates
+	eleventyConfig.addFilter("htmlDateString", function (dateObj) {
+		return DateTime.fromJSDate(dateObj, {
+			zone: "utc",
+		}).toFormat("yyyy-LL-dd");
+	});
 
-	// Transforms
-	Object.keys(transforms).forEach((transformName) => {
-		eleventyConfig.addTransform(transformName, transforms[transformName])
-	})
+    // Compress/Minify HTML output on production builds
+	eleventyConfig.addTransform("compressHTMLOutput", (content, outputPath) => {
+		if (outputPath.endsWith(".html") && isProduction) {
+			return htmlmin.minify(content, {
+				collapseWhitespace: true,
+				removeComments: true,
+				useShortDoctype: true,
+			});
+		}
 
-	// Collections
-	Object.keys(collections).forEach((collectionName) => {
-		eleventyConfig.addCollection(collectionName, collections[collectionName])
-	})
+		return content;
+	});
 
 	// This allows Eleventy to watch for file changes during local development.
 	eleventyConfig.setUseGitIgnore(false);
-
 	return {
 		dir: {
 			input: "src/",
 			output: "dist",
 			includes: "_includes",
-			layouts: "_layouts"
+			layouts: "_layouts",
 		},
 		templateFormats: ["html", "md", "njk"],
 		htmlTemplateEngine: "njk",
-
-		// 1.1 Enable eleventy to pass dirs specified above
-		passthroughFileCopy: true
+		passthroughFileCopy: true,
 	};
 };
