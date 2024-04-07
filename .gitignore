@@ -67,6 +67,6 @@ typings/
 dist
 
 # Don't commit temp build files
-src/static/app.min.js
+src/static/scripts.min.js
 src/static/styles.min.css
 src/_includes/styles.min.css
