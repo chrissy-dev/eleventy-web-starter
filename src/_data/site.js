@@ -5,7 +5,7 @@ module.exports = {
 	"author": "Chris Collins",
 	"meta_data": {
 		"twitter": "@chrissy_dev",
-		"opengraph_default": "/static/opengraph-default.jpg"
+		"opengraph_default": "/static/opengraph-default.webp"
 	},
 	"env": process.env.ELEVENTY_ENV === 'production'
 }
