@@ -90,7 +90,6 @@ eleventy-web-starter/
 │   ├── _assets/         # Assets - JS, CSS (Tailwind)
 ├── .eleventy.js         # Eleventy configuration file
 ├── package.json         # Node dependencies and scripts
-├── tailwind.config.js   # Tailwind Config
 ├── postcss.config.js    # PostCSS Config
 └── README.md            # Project documentation
 ```
